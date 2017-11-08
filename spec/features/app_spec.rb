@@ -3,9 +3,9 @@ require 'capybara/rspec'
 describe Battle do
 
   describe "Homepage", :type => :feature do
-    it 'should say "Testing infrastructure working!"' do
+    it 'should say "Hello players!!"' do
       visit '/'
-      expect(page).to have_content "Testing infrastructure working!"
+      expect(page).to have_content "Hello players!!"
     end
     it 'should display names of the players' do
       visit '/'
