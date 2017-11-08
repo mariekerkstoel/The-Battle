@@ -13,6 +13,7 @@ describe Battle do
       fill_in 'player2', with: "Marie"
       click_button 'Save'
       expect(page).to have_content "JJ"
+      expect(page).to have_content "Marie"
     end
   end
 end
