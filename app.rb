@@ -15,9 +15,15 @@ require 'sinatra/base'
     end
 
     get '/play' do
+      @player1 = session[:player1] || 'Marie'
+      @player2 = session[:player2] || 'Thomas'
+      erb(:play)
+    end
+
+    get '/attack' do
       @player1 = session[:player1]
       @player2 = session[:player2]
-      erb(:play)
+      erb(:attack)
     end
 
   end

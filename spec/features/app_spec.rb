@@ -19,5 +19,11 @@ describe Battle do
       sign_in_and_play
       expect(page).to have_content "Player 2: 60 HP"
     end
+    it 'should make me able to attack the other player' do
+      sign_in_and_play
+      click_button 'Attack'
+      expect(page).to have_content('JJ attacked Marie!')
+    end
   end
+
 end
