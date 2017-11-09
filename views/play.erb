@@ -2,6 +2,14 @@
 
 <h2>Player 2: <%= @points2 %> HP</h2>
 
-<form action='/attack' method='get'>
+<% if @points2 == 0 %>
+You've won!
+<% end %>
+
+<form action='/attack' method='post'>
 <input type='submit' value='Attack'>
+</form>
+
+<form action='/poison' method='post'>
+<input type='submit' value='Poison'>
 </form>
