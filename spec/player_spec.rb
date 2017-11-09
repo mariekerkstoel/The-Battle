@@ -16,7 +16,7 @@ describe Player do
     let (:player2) { described_class.new('JJ') }
     it 'should subtract 10 points when we attack' do
       player.attack(player2)
-      expect(player2.player_points).to eq 50
+      expect(player2.hitpoints).to eq 50
     end
   end
 end

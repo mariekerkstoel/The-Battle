@@ -18,8 +18,8 @@ require './lib/player.rb'
     get '/play' do
       @player1 = $player1.name
       @player2 = $player2.name
-      @points1 = $player1.player_points
-      @points2 = $player2.player_points
+      @points1 = $player1.hitpoints
+      @points2 = $player2.hitpoints
       erb(:play)
     end
 
