@@ -26,18 +26,8 @@ class Battle < Sinatra::Base
     @points1 = @game.player1.hitpoints
     @points2 = @game.player2.hitpoints
     @count = @game.count
-    if @points2 <= 0 || @points1 <= 0
-      redirect('/winner')
-    end
-    erb(:play)
-  end
 
-  get '/winner' do
-    @player1 = @game.player1.name
-    @player2 = @game.player2.name
-    @points1 = @game.player1.hitpoints
-    @points2 = @game.player2.hitpoints
-    erb(:winner)
+    erb(:play)
   end
 
   post '/attack' do

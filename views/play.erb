@@ -1,30 +1,36 @@
-<div style= "font-family:courrier;text-align:center;font-size:38;"><%= @player1 %> vs. <%= @player2 %></div>
+<body background='http://magazine.viterbi.usc.edu/wp-content/uploads/BSP_054.jpg'>
+<div style= "color:white;font-family:georgia;text-align:center;font-size:38;"><%= @player1 %> vs. <%= @player2 %></div>
 
-<h2>Player 1: <%= @player1 %> <%= @points1 %> HP</h2>
-
+<h2 style='color:white;font-family:georgia;text-align:center;'>Player 1: <%= @player1 %> <%= @points1 %> HP</h2>
+<div1 style="text-align:center;">
 <% if @count % 2 == 0 %>
 <form action='/attack' method='post'>
-<button type='submit' value='Attack' style='padding:15px 25px;border:1;background-color:blue;'>Attack</button>
+<button type='submit' value='Attack' style='padding:15px 25px;border:1;text-align:center;'>Attack</button>
 </form>
 
 <form action='/poison' method='post'>
-<button type='submit' value='Poison' style='padding:15px 25px;border:1;background-color:blue;'>Poison</button>
+<button type='submit' value='Poison' style='padding:15px 25px;border:1;'>Poison</button>
 </form>
 <% end %>
 
-<h2>Player 2: <%= @player2 %> <%= @points2 %> HP</h2>
+<h2 style='color:white;font-family:georgia;text-align:center;'>Player 2: <%= @player2 %> <%= @points2 %> HP</h2>
+<div1 style="text-align:center;">
 <% if @count % 2 != 0 %>
 <form action='/attack' method='post'>
-<button type='submit' value='Attack' style='padding:15px 25px;border:1;background-color:blue;'>Attack</button>
+<button type='submit' value='Attack' style='padding:15px 25px;border:1;'>Attack</button>
 </form>
+</div1>
 
 <form action='/poison' method='post'>
-<button type='submit' value='Poison' style='padding:15px 25px;border:1;background-color:blue;'>Poison</button>
+<button type='submit' value='Poison' style='padding:15px 25px;border:1;'>Poison</button>
 </form>
 <% end %>
-
+</div1>
+<div2 style='font-size:50;color:white;font-family:georgia;text-align:center;'>
 <% if @points2 <= 0 %>
-Player 1 has won!
+<%= @player1 %> has won!
 <% elsif @points1 <= 0 %>
-Player 2 has won!
+<%= @player2 %> has won!
 <% end %>
+</div2>
+</body>
