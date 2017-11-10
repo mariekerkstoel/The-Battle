@@ -2,23 +2,23 @@
 
 <h2>Player 1: <%= @player1 %> <%= @points1 %> HP</h2>
 
-<% if @count % 2 != 0 %>
-<form action='/attack_player2' method='post'>
+<% if @count % 2 == 0 %>
+<form action='/attack' method='post'>
 <button type='submit' value='Attack' style='padding:15px 25px;border:1;background-color:blue;'>Attack</button>
 </form>
 
-<form action='/poison_player2' method='post'>
+<form action='/poison' method='post'>
 <button type='submit' value='Poison' style='padding:15px 25px;border:1;background-color:blue;'>Poison</button>
 </form>
 <% end %>
 
 <h2>Player 2: <%= @player2 %> <%= @points2 %> HP</h2>
-<% if @count % 2 == 0 %>
-<form action='/attack_player1' method='post'>
+<% if @count % 2 != 0 %>
+<form action='/attack' method='post'>
 <button type='submit' value='Attack' style='padding:15px 25px;border:1;background-color:blue;'>Attack</button>
 </form>
 
-<form action='/poison_player1' method='post'>
+<form action='/poison' method='post'>
 <button type='submit' value='Poison' style='padding:15px 25px;border:1;background-color:blue;'>Poison</button>
 </form>
 <% end %>

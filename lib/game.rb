@@ -8,23 +8,41 @@ class Game
     @count = 0
   end
 
-  def attack_player2
-     @player2.receive_damage if @player2.hitpoints > 0
+  def self.access_game
+    @stored_game
+  end
+
+  def self.game(player1, player2)
+    @stored_game = Game.new(player1, player2)
+
+  end
+  def attack
+    if @count % 2 == 0
+      @player2.receive_damage if @player2.hitpoints > 0
+    elsif @count % 2 != 0
+      @player1.receive_damage if @player1.hitpoints > 0
+    end
   end
 
   def switch_turn
     @count += SWITCH
   end
 
-  def attack_player1
-     @player1.receive_damage if @player1.hitpoints > 0
+  def attack_and_switch
+    attack
+    switch_turn
   end
 
-  def poison_player2
-    @player2.receive_more_damage if @player2.hitpoints > 0
+  def poison
+    if @count % 2 == 0
+      @player2.receive_more_damage if @player2.hitpoints > 0
+    elsif @count % 2 != 0
+      @player1.receive_more_damage if @player1.hitpoints > 0
+    end
   end
 
-  def poison_player1
-    @player1.receive_more_damage if @player1.hitpoints > 0
+  def poison_and_switch
+    poison
+    switch_turn
   end
 end

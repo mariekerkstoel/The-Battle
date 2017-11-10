@@ -21,13 +21,13 @@ describe Battle do
     it 'should display 50 points after the attack' do
       sign_in_and_play
       click_button 'Attack'
-      expect(page).to have_content 'Player 1: JJ 50 HP'
+      expect(page).to have_content 'Player 2: Marie 50 HP'
     end
     it 'should display 50 points after the attack' do
       sign_in_and_play
       click_button 'Attack'
       click_button 'Attack'
-      expect(page).to have_content 'Player 2: Marie 50 HP'
+      expect(page).to have_content 'Player 1: JJ 50 HP'
     end
   end
 end

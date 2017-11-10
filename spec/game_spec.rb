@@ -4,28 +4,28 @@ describe Game do
   let(:player2) { double :fake_player2, name: 'JJ' }
   let(:game) { described_class.new('Marie', 'JJ') }
 
-  describe '#attack_player1' do
+  describe '#attack' do
     it 'should subtract 10 points when we attack' do
       allow(player).to receive(:receive_damage).and_return(50)
-      expect(game.attack_player1).to eq 50
+      expect(game.attack).to eq 50
     end
   end
-  describe '#attack_player2' do
+  describe '#attack' do
     it 'should subtract 10 points when we attack' do
       allow(player2).to receive(:receive_damage).and_return(50)
-      expect(game.attack_player2).to eq 50
+      expect(game.attack).to eq 50
     end
   end
-  describe '#poison_player1' do
+  describe '#poison' do
     it 'should subtract 10 points when we attack' do
       allow(player2).to receive(:receive_damage).and_return(20)
-      expect(game.poison_player1).to eq 20
+      expect(game.poison).to eq 20
     end
   end
-  describe '#poison_player2' do
+  describe '#poison' do
     it 'should subtract 10 points when we attack' do
       allow(player2).to receive(:receive_damage).and_return(20)
-      expect(game.poison_player2).to eq 20
+      expect(game.poison).to eq 20
     end
   end
   describe '#switch_turn' do
