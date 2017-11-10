@@ -1,4 +1,4 @@
-<h1><%= @player1 %> vs. <%= @player2 %> </h1>
+<div style= "font-family:courrier;text-align:center;font-size:38;"><%= @player1 %> vs. <%= @player2 %></div>
 
 <h2>Player 2: <%= @points2 %> HP</h2>
 
@@ -7,9 +7,9 @@ You've won!
 <% end %>
 
 <form action='/attack' method='post'>
-<input type='submit' value='Attack'>
+<button type='submit' value='Attack' style='padding:15px 25px;border:1;background-color:blue;'>Attack</button>
 </form>
 
 <form action='/poison' method='post'>
-<input type='submit' value='Poison'>
+<button type='submit' value='Poison' style='padding:15px 25px;border:1;background-color:blue;'>Poison</button>
 </form>
