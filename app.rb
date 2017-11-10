@@ -19,21 +19,42 @@ class Battle < Sinatra::Base
     @player2 = $game.player2.name
     @points1 = $game.player1.hitpoints
     @points2 = $game.player2.hitpoints
+    @count = $game.count
     erb(:play)
   end
 
-  post '/attack' do
-    @player1 = $game.player1.name
-    @player2 = $game.player2.name
+  post '/attack_player2' do
+    # @player1 = $game.player1.name
+    # @player2 = $game.player2.name
     $game.player2.hitpoints > 0
-    $game.attack
+    $game.attack_player2
+    $game.switch_turn
     redirect('/play')
   end
 
-  post '/poison' do
+  post '/attack_player1' do
+    # @player1 = $game.player1.name
+    # @player2 = $game.player2.name
+    $game.player1.hitpoints > 0
+    $game.attack_player1
+    $game.switch_turn
+    redirect('/play')
+  end
+
+
+  post '/poison_player1' do
     @player1 = $game.player1.name
     @player2 = $game.player2.name
-    $game.poison
+    $game.poison_player2
+    $game.switch_turn
+    redirect('/play')
+  end
+
+  post '/poison_player2' do
+    @player1 = $game.player1.name
+    @player2 = $game.player2.name
+    $game.poison_player1
+    $game.switch_turn
     redirect('/play')
   end
 end
