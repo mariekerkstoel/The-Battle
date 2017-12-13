@@ -5,8 +5,6 @@ require './lib/game.rb'
 class Battle < Sinatra::Base
   enable :sessions
 
-
-
   get '/' do
     erb(:index)
   end
@@ -15,7 +13,6 @@ class Battle < Sinatra::Base
     Game.game(params[:player1], params[:player2])
     redirect '/play'
   end
-
   before do
     @game = Game.access_game
   end
